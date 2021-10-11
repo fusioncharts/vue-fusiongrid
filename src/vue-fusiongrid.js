@@ -47,7 +47,7 @@ const fusionGridComponent = (FusionGrid) => {
       }
 
       const setPrevConfig = (config) => {
-        prevConfig = JSON.parse(JSON.stringify(config));
+        if (config) prevConfig = JSON.parse(JSON.stringify(config));
       }
 
       const getPrevOptions = () => (prevConfig);

@@ -78,7 +78,7 @@ const fusionGridComponent = (FusionGrid) => {
         if (grid) {
           grid.setDataTable(props.dataSource.data);
         } else {
-          console.log("No grid found");
+          console.log("No grid found.");
         }
       }
 

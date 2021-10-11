@@ -8,7 +8,8 @@ const config = {
   },
   height: {
     default: "auto"
-  }
+  },
+  getFGinstanace: Function
 }
 
 const fusionGridComponent = (FusionGrid) => {
@@ -31,6 +32,11 @@ const fusionGridComponent = (FusionGrid) => {
         __el.value.style.width = width;
         __el.value.style.height = height;
         renderGrid();
+        if (props.getFGinstanace) {
+          props.getFGinstanace(grid);
+        } else {
+          console.log("no fg instance")
+        }
       });
 
       const attachEventListeners = () => {

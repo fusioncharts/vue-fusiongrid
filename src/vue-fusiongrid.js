@@ -4,10 +4,10 @@ const config = {
   dataSource: Object,
   config: Object,
   width: {
-    default: '100%'
+    default: 800
   },
   height: {
-    default: 'auto'
+    default: 500
   },
   getFGInstance: Function
 };
@@ -23,9 +23,9 @@ const fusionGridComponent = (FusionGrid) => {
       let grid;
       let {width, height} = props;
       let prevConfig = {};
-
-      if (width !== '100%') width = width + 'px';
-      if (height !== 'auto') height = height + 'px';
+      
+      width = width + 'px';
+      height = height + 'px';
        
       onMounted(function () {
         __el.value = getCurrentInstance().proxy.$el;

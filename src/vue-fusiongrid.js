@@ -1,16 +1,16 @@
-import {onMounted, h, getCurrentInstance, toRefs, ref, watch} from 'vue'
-import events from './events'
+import {onMounted, h, getCurrentInstance, toRefs, ref, watch} from 'vue';
+import events from './events';
 const config = {
   dataSource: Object,
   config: Object,
   width: {
-    default: "100%"
+    default: '100%'
   },
   height: {
-    default: "auto"
+    default: 'auto'
   },
   getFGInstance: Function
-}
+};
 
 const fusionGridComponent = (FusionGrid) => {
   return {
@@ -24,8 +24,8 @@ const fusionGridComponent = (FusionGrid) => {
       let {width, height} = props;
       let prevConfig = {};
 
-      if (width !== "100%") width = width + "px";
-      if (height !== "auto") height = height + "px";
+      if (width !== '100%') width = width + 'px';
+      if (height !== 'auto') height = height + 'px';
        
       onMounted(function () {
         __el.value = getCurrentInstance().proxy.$el;
@@ -35,7 +35,7 @@ const fusionGridComponent = (FusionGrid) => {
         if (props.getFGInstance) {
           props.getFGInstance(grid);
         } else {
-          console.log("no fg instance")
+          console.log('no fg instance');
         }
       });
 
@@ -44,11 +44,11 @@ const fusionGridComponent = (FusionGrid) => {
           let callback = (...args) => emit(event, ...args);
           grid.on(event, callback);
         });
-      }
+      };
 
       const setPrevConfig = (config) => {
         if (config) prevConfig = JSON.parse(JSON.stringify(config));
-      }
+      };
 
       const getPrevOptions = () => (prevConfig);
 
@@ -61,7 +61,7 @@ const fusionGridComponent = (FusionGrid) => {
         attachEventListeners();
         grid.render();
         setPrevConfig(props.config);
-      }
+      };
 
       const updateGridConfig = () => {
         const _previousConfig = getPrevOptions();
@@ -71,16 +71,16 @@ const fusionGridComponent = (FusionGrid) => {
             if (grid[fnName]) grid[fnName](props.config[cKey]);
           }
         }
-       setPrevConfig(props.config);
-      }
+        setPrevConfig(props.config);
+      };
 
       const updateData = () => {
         if (grid) {
           grid.setDataTable(props.dataSource.data);
         } else {
-          console.log("No grid found.");
+          console.log('No grid found.');
         }
-      }
+      };
 
       watch(
         reactiveDataSource.data,
@@ -100,7 +100,7 @@ const fusionGridComponent = (FusionGrid) => {
         class: 'vue-fusiongrid'
       });
     }
-  }
-}
+  };
+};
 
 export default fusionGridComponent;

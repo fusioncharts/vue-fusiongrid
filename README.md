@@ -1,6 +1,6 @@
 # vue-fusiongrid
 
-A simple and lightweight `VueJS` component for `FusionGrid` JavaScript Charting Library. The `vue-fusiongrid` wrapper lets you easily include G in your `VueJS` projects.
+A simple and lightweight `VueJS` component for `FusionGrid` JavaScript Grid Library. The `vue-fusiongrid` wrapper lets you easily include FusionGrid in your `VueJS` projects.
 
 
 ## Table of Contents
@@ -44,7 +44,7 @@ yarn add vue-fusiongrid
 There are two ways of adding `vue-fusiongrid` component in your project
 
 **Registering globally as a plugin**
-Import `vue`, `vue-fusiongrid` and FusionGrid in main app file.
+Import `createApp`, `vue-fusiongrid` and FusionGrid in main app file.
 
 ```js
 
@@ -100,8 +100,7 @@ To call APIs we will need the fusiongrid object. To get the fusiongrid object fr
   :dataSource="dataSource"
   :config="config"
   :getFGinstanace="getFGinstanace"
->
-</vue-fusiongrid>
+/>
 ```
 
 Now, we can access the fusiongrid object from `fusiongridObj` and can invoke API from the object.
@@ -112,12 +111,11 @@ export default {
   components: {
     VueFusiongrid
   },
+
   setup() {
-    
     const getFGInstance  = (fusionGridObj)  => {
       console.log(fusionGridObj);
     }
-
     return {
       getFGInstance
     }
@@ -148,17 +146,17 @@ Here is a basic sample that shows how to create a chart using `vue-fusiongrid`:
 
 ```js
 
-  import { createApp } from 'vue'
-  import App from './App.vue'
+import { createApp } from 'vue'
+import App from './App.vue'
 
-  import FusionGrid from "fusiongrid";
-  import "fusiongrid/dist/fusiongrid.css";
-  import VueFusiongrid from "vue-fusiongrid";
-  const app = createApp(App);
+import FusionGrid from "fusiongrid";
+import "fusiongrid/dist/fusiongrid.css";
+import VueFusiongrid from "vue-fusiongrid";
+const app = createApp(App);
 
-  // register VueFusionGrid component
-  app.use(VueFusiongrid, FusionGrid);
-  app.mount('#app')
+// register VueFusionGrid component
+app.use(VueFusiongrid, FusionGrid);
+app.mount('#app')
 
 // File where the grid is being integrated
 import FusionGrid from "fusiongrid";
@@ -212,7 +210,6 @@ export default {
     }
   }
 }
-
 ```
 
 Here's HTML template for the above example:

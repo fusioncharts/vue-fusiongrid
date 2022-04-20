@@ -25,7 +25,7 @@ A simple and lightweight `VueJS` component for `FusionGrid` JavaScript Grid Libr
 ## Installation
 
 **Direct Download**
-All binaries are located on our [github repository](https://github.com/FusionGrid/vue-fusiongrid/).
+All binaries are located on our [github repository](https://github.com/fusioncharts/vue-fusiongrid).
 
 **Install from NPM**
 
@@ -226,4 +226,4 @@ Here's HTML template for the above example:
 ```
 
 ## Examples
-- You can see the various examples at [example](https://github.com/FusionGrid/vue-fusiongrid/tree/master/example/src/).
+- You can see the various examples at [example](https://github.com/fusioncharts/vue-fusiongrid/tree/master/example/src/).

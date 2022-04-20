@@ -1,6 +1,6 @@
 {
   "name": "vue-fusiongrid",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": false,
   "main": "dist/vue-fusiongrid.common.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "fusiongrid": "^1.1.0"
+    "fusiongrid": "^1.1.1"
   },
   "devDependencies": {
     "vue": "^3.0.0",
